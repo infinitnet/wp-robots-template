@@ -64,22 +64,24 @@ Disallow: /comments/feed/
 Disallow: /*/comments/feed/
 
 # ---- WooCommerce Specific Rules ----
+# Uncomment if you're using WooCommerce
+
 # Block WooCommerce cart, checkout, and account pages
-Disallow: /*add-to-cart=*
-Disallow: /cart/
-Disallow: /checkout/
-Disallow: /my-account/
+#Disallow: /*add-to-cart=*
+#Disallow: /cart/
+#Disallow: /checkout/
+#Disallow: /my-account/
 
 # Block specific WooCommerce AJAX requests
-Disallow: /?wc-ajax=get_refreshed_fragments
-Disallow: /*?wc-ajax=
-Disallow: /*&add-to-cart=*
+#Disallow: /?wc-ajax=get_refreshed_fragments
+#Disallow: /*?wc-ajax=
+#Disallow: /*&add-to-cart=*
 
 # Block WooCommerce product filtering and sorting parameters
-Disallow: /*?orderby=
-Disallow: /*?filter=
-Disallow: /*&filter=
-Disallow: /*&orderby=
+#Disallow: /*?orderby=
+#Disallow: /*?filter=
+#Disallow: /*&filter=
+#Disallow: /*&orderby=
 
 # ---- WordPress REST API ----
 # Block REST API access
@@ -88,6 +90,11 @@ Disallow: /wp-json/
 # ---- Other ----
 # Outgoing links we don't want to get crawled
 #Disallow: /go/
+
+# ---- WordPress Archives ----
+# Uncomment the following lines to block tag and author archives
+#Disallow: /tag/
+#Disallow: /author/
 
 # ---- Sitemap Declaration ----
 # Main sitemap index - typically contains references to all other sitemaps
