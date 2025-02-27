@@ -46,7 +46,7 @@ Disallow: /wp-login.php
 Disallow: /wp-register.php
 
 # ---- WordPress Search & Duplicate Content ----
-# Block search results to prevent duplicate content issues
+# Block search results
 Disallow: /?s=
 Disallow: /search/
 
@@ -59,7 +59,7 @@ Disallow: */embed
 # Block non-pretty links
 Disallow: /*?p=*
 
-# Block WordPress comment feeds (typically low value for search)
+# Block WordPress comment feeds
 Disallow: /comments/feed/
 Disallow: /*/comments/feed/
 
