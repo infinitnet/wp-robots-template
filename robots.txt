@@ -1,25 +1,94 @@
+# ==============================================================
+# WordPress robots.txt - Optimized for search engine crawlers
+# ==============================================================
+
+# Default rules for all user agents
 User-agent: *
-Allow: *.js
-Allow: *.css
+
+# ---- Allow essential resources for rendering ----
+# Allow CSS files for proper page styling
+Allow: /*.css$
+
+# Allow JavaScript files for proper page functionality
+Allow: /*.js$
+
+# Allow images and common media formats
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Allow fonts for proper rendering
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+Allow: /*.eot$
+
+# Allow essential WordPress AJAX functionality
 Allow: /wp-admin/admin-ajax.php
+
+# ---- WordPress Core - Admin & System Files ----
+# Block admin area (except the AJAX endpoint allowed above)
 Disallow: /wp-admin/
+
+# Block sensitive WordPress system files
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/*/readme.txt
 Disallow: /readme.html
-Disallow: /?s=
-Disallow: /search/
+Disallow: /license.txt
+Disallow: /xmlrpc.php
+
+# Block WordPress login and registration
 Disallow: /wp-login.php
 Disallow: /wp-register.php
+
+# ---- WordPress Search & Duplicate Content ----
+# Block search results to prevent duplicate content issues
+Disallow: /?s=
+Disallow: /search/
+
+# Block trackbacks and pingbacks
 Disallow: /trackback/
+Disallow: */trackback/
+Disallow: */feed/
+Disallow: */embed
+
+# Block non-pretty links
+Disallow: /*?p=*
+
+# Block WordPress comment feeds (typically low value for search)
+Disallow: /comments/feed/
+Disallow: /*/comments/feed/
+
+# ---- WooCommerce Specific Rules ----
+# Block WooCommerce cart, checkout, and account pages
 Disallow: /*add-to-cart=*
 Disallow: /cart/
 Disallow: /checkout/
 Disallow: /my-account/
-Disallow: /products/
-Disallow: /recommends/
+
+# Block specific WooCommerce AJAX requests
 Disallow: /?wc-ajax=get_refreshed_fragments
+Disallow: /*?wc-ajax=
+Disallow: /*&add-to-cart=*
+
+# Block WooCommerce product filtering and sorting parameters
+Disallow: /*?orderby=
+Disallow: /*?filter=
+Disallow: /*&filter=
+Disallow: /*&orderby=
+
+# ---- WordPress REST API ----
+# Block REST API access
 Disallow: /wp-json/
 
+# ---- Other ----
+# Outgoing links we don't want to get crawled
+#Disallow: /go/
+
+# ---- Sitemap Declaration ----
+# Main sitemap index - typically contains references to all other sitemaps
 Sitemap: https://example.com/sitemap_index.xml
-Sitemap: https://example.com/post-sitemap.xml
-Sitemap: https://example.com/category-sitemap.xml
-Sitemap: https://example.com/page-sitemap.xml
-Sitemap: https://example.com/product-sitemap.xml
