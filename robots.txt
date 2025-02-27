@@ -1,0 +1,25 @@
+User-agent: *
+Allow: *.js
+Allow: *.css
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-admin/
+Disallow: /readme.html
+Disallow: /?s=
+Disallow: /search/
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+Disallow: /trackback/
+Disallow: /*add-to-cart=*
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /products/
+Disallow: /recommends/
+Disallow: /?wc-ajax=get_refreshed_fragments
+Disallow: /wp-json/
+
+Sitemap: https://example.com/sitemap_index.xml
+Sitemap: https://example.com/post-sitemap.xml
+Sitemap: https://example.com/category-sitemap.xml
+Sitemap: https://example.com/page-sitemap.xml
+Sitemap: https://example.com/product-sitemap.xml
